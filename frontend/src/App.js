@@ -32,7 +32,7 @@ function App() {
     // We have to wait for the response
 
     try {
-      const response = await fetch("http://127.0.0.1:5000/crowd");
+      const response = await fetch("https://smart-campus-system-e0zc.onrender.com/crowd");
       // fetch = built-in JavaScript function to make HTTP requests
       // await = wait for the response before continuing
       // This calls your Flask backend
