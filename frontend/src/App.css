@@ -1,0 +1,169 @@
+/* === GLOBAL STYLES === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* box-sizing makes width/height calculations easier */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Gradient background - purple theme */
+  min-height: 100vh;
+  /* vh = viewport height, 100vh = full screen height */
+}
+
+
+/* === MAIN CONTAINER === */
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* Flexbox = modern CSS layout system */
+  /* flex-direction column = stack items vertically */
+}
+
+
+/* === HEADER === */
+.App-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* rgba = red, green, blue, alpha (transparency) */
+  /* 0.1 = 10% opacity = semi-transparent white */
+  backdrop-filter: blur(10px);
+  /* Blurs whatever is behind this element */
+  padding: 2rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+
+/* === DASHBOARD (CARDS CONTAINER) === */
+.dashboard {
+  flex: 1;
+  /* flex: 1 = take up all remaining space */
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-wrap = if cards don't fit, move to next row */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+  /* gap = space between cards */
+  padding: 3rem 2rem;
+}
+
+
+/* === CARD === */
+.card {
+  background: white;
+  border-radius: 20px;
+  /* Rounded corners */
+  padding: 2rem;
+  min-width: 280px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* Box shadow = drop shadow effect */
+  /* 0 10px = shadow 10px below, 30px = blur amount */
+  transition: transform 0.3s ease;
+  /* Smooth animation when hovering */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  /* Move card up 5px when you hover over it */
+}
+
+.card h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+
+/* === COUNT DISPLAY === */
+.count-display {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+  margin: 1rem 0;
+  /* Color is set dynamically with inline style in React */
+}
+
+
+/* === STATUS BADGE === */
+.status-badge {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  /* Very rounded = pill shape */
+  /* Background color set dynamically in React */
+}
+
+
+/* === INFO CARD === */
+.info-card {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  /* space-between = push items to opposite ends */
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  /* Remove border from last item */
+}
+
+.info-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.info-value {
+  color: #667eea;
+  font-weight: 500;
+}
+
+
+/* === FOOTER === */
+.footer {
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: auto;
+  /* margin-top auto = push footer to bottom */
+}
+
+
+/* === RESPONSIVE DESIGN === */
+/* On screens smaller than 768px (tablets/phones) */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .dashboard {
+    padding: 2rem 1rem;
+  }
+  
+  .count-display {
+    font-size: 3rem;
+  }
+}
